@@ -14,7 +14,7 @@ pygame.display.set_caption("Course de voitures")
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 RED = (255, 0, 0)
-BLUE = (0, 0, 255)
+BLUE = 
 
 # Définir la taille des voitures
 car_width = 30
@@ -22,7 +22,7 @@ car_height = 10
 
 # Définir la position de départ des voitures
 car1_position = (50, 50)
-car2_position = (50, 100)
+car2_position = 
 
 # Définir la distance de la course
 distance_course = 700
@@ -33,7 +33,7 @@ car2_speed = 0
 
 # Charger les images des voitures
 car1_image = pygame.Surface((car_width, car_height))
-car1_image.fill(RED)
+car1_image.fill()
 car2_image = pygame.Surface((car_width, car_height))
 car2_image.fill(BLUE)
 
@@ -41,11 +41,11 @@ car2_image.fill(BLUE)
 clock = pygame.time.Clock()
 game_over = False
 started = False
-while not game_over:
+while not :
     # Gérer les événements
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            game_over = True
+            game_over = 
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_SPACE and not started:
                 car1_speed += random.uniform(0, 1)
@@ -59,7 +59,7 @@ while not game_over:
                 car2_speed += random.uniform(-1, 1)
     # Avancer les voitures
     car1_position = (car1_position[0] + car1_speed, car1_position[1])
-    car2_position = (car2_position[0] + car2_speed, car2_position[1])
+    car2_position = (car2_position[0] + car2_speed, )
 
     if car1_position[0] < 0:
         car1_position = (0, car1_position[1])
@@ -69,7 +69,7 @@ while not game_over:
     screen.fill(WHITE)
     pygame.draw.rect(screen, BLACK, (distance_course, 0, 2, screen_height))  # Ligne d'arrivée
     screen.blit(car1_image, car1_position)
-    screen.blit(car2_image, car2_position)
+    screen.blit()
 
     # Mettre à jour l'écran
     pygame.display.update()
@@ -79,7 +79,7 @@ while not game_over:
         print("La voiture rouge a gagné !")
         game_over = True
     elif car2_position[0] >= distance_course:
-        print("La voiture bleue a gagné !")
+        
         game_over = True
 
     # Limiter la vitesse de rafraîchissement
